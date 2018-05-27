@@ -9,7 +9,7 @@ LunarCalendar: 一个农历-阳历转换器
 LunarCalendar 是一个农历-阳历的转换器, 包含了一些在中国常见的农历和国历的节假日。
 由于韩国、日本的农历与中国是相同的，只是节假日有所不同，所以支持对韩国、日本节假日和语言的扩展。
 
-转换器支持时间段从1900-2100, 如果需要更长的时间段，利用generate.htm生成的数据即可。转换器的实现，参考自`Lunar-Solar-Calendar-Converter <https://github.com/isee15/Lunar-Solar-Calendar-Converter>`_.
+转换器支持时间段从1900-2100, 如果需要更长的时间段，利用generate.htm生成的数据即可。转换器的实现，参考自 `Lunar-Solar-Calendar-Converter <https://github.com/isee15/Lunar-Solar-Calendar-Converter>`_.
 
 
 特点
@@ -36,7 +36,9 @@ Or pip::
 Quickstart
 ----------
 
-国历转农历::
+国历转农历:
+
+.. code-block:: python
 
     import datetime
     from lunarcalendar import Converter, Solar, Lunar, DateNotExist
@@ -49,7 +51,9 @@ Quickstart
     print(solar)
     print(solar.to_date(), type(solar.to_date()))
 
-农历转国历::
+农历转国历:
+
+.. code-block:: python
 
     lunar = Lunar(2018, 2, 30, isleap=False)
     print(lunar)
@@ -60,14 +64,18 @@ Quickstart
     print(lunar.to_date(), type(lunar.to_date()))
     print(Lunar.from_date(datetime.date(2018, 4, 15)))
 
-日期合法性检查, 农历和国历都起作用, 如: 农历闰月2018-2-15是不存在的::
+日期合法性检查, 农历和国历都起作用, 如: 农历闰月2018-2-15是不存在的:
+
+.. code-block:: python
 
     try:
         lunar = Lunar(2018, 2, 15, isleap=True)
     except DateNotExist:
         print(traceback.format_exc())
 
-打印内置节假日, 目前支持中文、英文输出::
+打印内置节假日, 目前支持中文、英文输出:
+
+.. code-block:: python
 
     from lunarcalendar.festival import festivals
 
@@ -80,7 +88,9 @@ Quickstart
     for fest in festivals:
         print(fest.get_lang('en'), fest(2017))
 
-输出::
+输出:
+
+.. code-block:: shell
 
     ......
     母亲节 2018-05-13
@@ -107,7 +117,9 @@ Quickstart
 目前，LunarCalendar支持的节假日只包含了在中国常见的节日，包括国历节假日(如: 国庆节、母亲节)和农历节假日(如: 中秋节、重阳节)。
 内置了中文和英文两种语言，如果要支持韩文、日文的节假日，只需要在`festival.py`中添加对应的语言和节假日。
 
-查看所有节假日的方法::
+查看所有节假日的方法:
+
+.. code-block:: shell
 
     from lunarcalendar.festival import festivals
 
@@ -121,5 +133,5 @@ Quickstart
 ----
 
 * `Homepage <http://github.com/wolfhong/LunarCalendar>`_
-* `PyPI <https://pypi.python.org/pypi/formic2>`_
+* `PyPI <https://pypi.python.org/pypi/LunarCalendar>`_
 * `Issue tracker <https://github.com/wolfhong/LunarCalendar/issues?status=new&status=open>`_

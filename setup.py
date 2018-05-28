@@ -13,7 +13,7 @@ def read(fname):
 setup(
     name='LunarCalendar',
     version=__version__,
-    description='A lunar calendar converter, contains a number of lunar and solar holidays, mainly from China.',
+    description='A lunar calendar converter, including a number of lunar and solar holidays, mainly from China.',
     long_description=read("README.rst"),
     author='wolfhong',
     author_email='hongxucai1991@gmail.com',

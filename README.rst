@@ -23,9 +23,9 @@ Features
 
 * Accurate raw data, synchronize with Microsolf's ``ChineseLunisolarCalendar`` class
 * Easy to extend holidays and languages
-* included Lunar Festivals, such as: MidAutumn Festival, Chinese New Year Eve, DragonBoat Festivals.
-* included Solar Festivals without fixed dates, such as: Mother's Day, Easter.
-* Added legality check of the lunar and solar date.
+* included Lunar Festivals, such as: MidAutumn Festival, Chinese New Year Eve, DragonBoat Festivals
+* included Solar Festivals without fixed dates, such as: Mother's Day, Easter
+* Added legality check of the lunar and solar date
 
 
 Install
@@ -145,7 +145,7 @@ Including festival standards:
 
 Supporting Chinese and English only now. If you want to add Korean or Japanese supports, modify ``lunarcalendar/festival.py`` to add holidays and languages.
 
-Some unusual holidays may not be included, `welcom to extend <https://github.com/wolfhong/LunarCalendar/issues>`_ .
+Some unusual holidays may not be included, `welcom to extend <https://github.com/wolfhong/LunarCalendar/issues>`_.
 
 
 

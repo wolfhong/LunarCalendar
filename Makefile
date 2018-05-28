@@ -9,6 +9,9 @@ test:
 clean:
 	rm -rf dist build
 
+check:
+	$(PYTHON) setup.py check -r -s
+
 package: clean
 	$(PYTHON) setup.py sdist bdist_wheel
 	twine upload dist/*

@@ -137,7 +137,7 @@ ChristmasEve = Festival(
 ChristmasDay = Festival(
         lambda year: datetime.date(year, 12, 25),
         en="Christmas Day",
-        zh="圣诞节,耶诞节,基督弥撒"
+        zh="圣诞节,圣诞,耶诞节,基督弥撒"
         )
 
 # Easter = Festival(
@@ -158,7 +158,7 @@ LaBa = Festival(
 NewYearEve = Festival(
         lambda year: Lunar(year+1, 1, 1).to_date() - datetime.timedelta(days=1),
         en="New Year's Eve",
-        zh="除夕,大年夜,年夜,年三十,除夜,岁除,大晦日",
+        zh="除夕,除夕夜,大年夜,年夜,年三十,除夜,岁除,大晦日",
         )
 
 ChineseNewYear = Festival(

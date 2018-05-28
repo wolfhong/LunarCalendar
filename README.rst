@@ -1,5 +1,5 @@
 LunarCalendar: A Lunar-Solar Converter
-=======================================
+======================================
 
 .. image::
   https://img.shields.io/pypi/v/LunarCalendar.svg
@@ -29,7 +29,7 @@ Features
 
 
 Install
---------
+-------
 
 LunarCalendar can be installed from the PyPI with easy_install::
 
@@ -135,7 +135,7 @@ Output:
 
 
 Contribution
--------------
+------------
 
 Including festival standards:
 
@@ -150,7 +150,7 @@ Some unusual holidays may not be included, `welcom to extend <https://github.com
 
 
 About
-------
+-----
 
 * `Homepage <http://github.com/wolfhong/LunarCalendar>`_
 * `PyPI <https://pypi.python.org/pypi/LunarCalendar>`_

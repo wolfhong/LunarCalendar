@@ -32,15 +32,14 @@ setup(
         'Lunar Calendar', 'festival', 'Chinese festivals',
     ],
     license='MIT',
-    packages=["lunarcalendar", "commands"],
+    packages=["lunarcalendar", ],
     install_requires=[
         'python-dateutil>=2.7.2',
     ],
     python_requires='>=2.7, <4',
     entry_points={
         'console_scripts': [
-            'lunar_find=commands.lunar_find:find',
-            # 'lunar_convert = commands.lunar_convert:convert',
+            'lunar-find=lunarcalendar.command:find',
         ],
     },
 )

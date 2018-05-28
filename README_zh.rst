@@ -1,5 +1,5 @@
 LunarCalendar: 一个农历-阳历转换器
-================================================
+==================================
 
 .. image::
   https://img.shields.io/pypi/v/LunarCalendar.svg
@@ -24,7 +24,7 @@ Features
 
 
 Install
---------
+-------
 
 LunarCalendar can be installed from the PyPI with easy_install::
 
@@ -129,7 +129,7 @@ Quickstart
 
 
 Contribution
--------------
+------------
 
 收录节日的标准:
 
@@ -143,7 +143,7 @@ Contribution
 
 
 About
-------
+-----
 
 * `Homepage <http://github.com/wolfhong/LunarCalendar>`_
 * `PyPI <https://pypi.python.org/pypi/LunarCalendar>`_

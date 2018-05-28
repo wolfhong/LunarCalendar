@@ -13,9 +13,9 @@ check:
 	$(PYTHON) setup.py check -r -s
 
 package: clean
-	$(PYTHON) setup.py sdist bdist_wheel
+	$(PYTHON) setup.py sdist bdist_wheel --universal
 	twine upload dist/*
 
 package-test: clean
-	$(PYTHON) setup.py sdist bdist_wheel
+	$(PYTHON) setup.py sdist bdist_wheel --universal
 	twine upload --repository-url https://test.pypi.org/legacy/ dist/*

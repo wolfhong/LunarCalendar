@@ -6,6 +6,10 @@ LunarCalendar: 一个农历-阳历转换器
   :target: https://pypi.python.org/pypi/LunarCalendar
   :alt: Last stable version (PyPI)
 
+
+Overview
+--------
+
 LunarCalendar 是一个农历-阳历的转换器, 收录了一些在中国常见的农历(阴历)和国历(阳历)节假日。
 由于韩国、日本的农历与中国是相同的，只是节假日有所不同，所以支持对韩国、日本节假日和语言的扩展。
 
@@ -26,7 +30,7 @@ Features
 Install
 -------
 
-LunarCalendar can be installed from the PyPI with easy_install::
+LunarCalendar can be installed from the PyPI with `easy_install`::
 
    $ easy_install LunarCalendar
 

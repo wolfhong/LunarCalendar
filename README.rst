@@ -6,6 +6,9 @@ LunarCalendar: A Lunar-Solar Converter
   :target: https://pypi.python.org/pypi/LunarCalendar
   :alt: Last stable version (PyPI)
 
+Overview
+--------
+
 If you aren't familiar with English, can read `Chinese(中文) <https://github.com/wolfhong/LunarCalendar/blob/develop/README_zh.rst>`_ here.
 
 LunarCalendar is a Lunar-Solar Converter, containing a number of lunar and solar holidays in China.
@@ -31,7 +34,7 @@ Features
 Install
 -------
 
-LunarCalendar can be installed from the PyPI with easy_install::
+LunarCalendar can be installed from the PyPI with `easy_install`::
 
    $ easy_install LunarCalendar
 

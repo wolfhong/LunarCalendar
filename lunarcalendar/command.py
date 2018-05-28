@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 import datetime
+import os
 import sys
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 
@@ -66,7 +67,7 @@ def create_parser():
 
 def format_output(fest, year):
     output = "{} on {}: {}".format(blue(fest.get_lang('zh')), year, red(fest(year)))
-    sys.stdout.write(output)
+    sys.stdout.write(output + os.linesep)
 
 
 def main(*args):
@@ -76,7 +77,7 @@ def main(*args):
     if args.help:
         parser.print_help()
     elif args.version:
-        sys.stdout.write(__version__)
+        sys.stdout.write(__version__ + os.linesep)
     else:
         name = args.name if args.name else ""
         if not isinstance(name, unicode_type):
@@ -96,11 +97,8 @@ def main(*args):
                     result_list.append(fest)  # not 100% matched, store result
 
         # not found, but matched
-        result_count = len(result_list)
         for i, fest in enumerate(result_list):
             format_output(fest, year)
-            if i != result_count - 1:  # not the last one
-                sys.stdout.write("\n")
 
     return 0
 

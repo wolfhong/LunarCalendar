@@ -13,11 +13,12 @@ from lunarcalendar.festival import zh_festivals
 
 DESCRIPTION = """Search festivals by chinese-name. """
 
-EPILOG = \
-"""
+EPILOG = """
 eg: lunar-find 中秋 [2018]
+eg: lunar-find -a [2018]
 
-Recommended time range: 1900 - 2100. If not, you must extend it before working well.
+Recommended time range: 1900 - 2100, which may be enough.
+If not, you must extend it before expect it working well.
 
 For documentation, source code and other information, please visit:
 <https://github.com/wolfhong/LunarCalendar>_.
@@ -41,7 +42,9 @@ def create_parser():
         action="store",
         default="",
         nargs="?",
-        help="Name of the festival") 
+        help="""Name of the festival.
+If Name is all, print all included festivals by date asc and then exit.
+""")
     fest.add_argument(
         dest="year",
         action="store",
@@ -72,21 +75,24 @@ def format_output(fest, year):
 
 def main(*args):
     parser = create_parser()
-
     args = parser.parse_args(args if args else None)
+    # print(args)
+
+    year = args.year if args.year else datetime.datetime.now().year
+    name = args.name if args.name else ""
+    if not isinstance(name, unicode_type):
+        name = name.decode(sys.stdin.encoding)
+
     if args.help:
         parser.print_help()
     elif args.version:
         sys.stdout.write(__version__ + os.linesep)
+    elif not name:  # syntax error
+        parser.print_help()
+        return 1
+    elif name == 'all':
+        [format_output(f, year) for f in sorted(zh_festivals, key=lambda _f: _f(year))]
     else:
-        name = args.name if args.name else ""
-        if not isinstance(name, unicode_type):
-            name = name.decode(sys.stdin.encoding)
-        year = args.year if args.year else datetime.datetime.now().year
-        if not name:
-            parser.print_help()
-            return 1
-
         result_list = []
         for fest in zh_festivals:
             for zhname in fest.get_lang_list('zh'):
@@ -106,6 +112,7 @@ def main(*args):
 def find():
     result = main()
     exit(result)
+
 
 if __name__ == "__main__":
     main(*sys.argv[1:])

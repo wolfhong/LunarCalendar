@@ -52,6 +52,12 @@ Console Commands
     $ lunar-find 登高节 2019
     重阳节 on 2019: 2019-10-07
 
+按照时间升序打印对应年份的所有内置日期:
+
+.. code-block:: console
+
+    $ lunar-find all 2019
+
 
 Quickstart
 ----------

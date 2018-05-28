@@ -25,7 +25,7 @@ def test_festival():
 
     assert festival.ChristmasEve(2018) == datetime.date(2018, 12, 24)
     assert festival.ChristmasDay(2018) == datetime.date(2018, 12, 25)
-    # assert festival.Easter(2018) == datetime.date(2018, 4, 21)
+    assert festival.Easter(2019) == datetime.date(2019, 4, 21)
 
     assert festival.LaBa(2017) == datetime.date(2018, 1, 24)
     assert festival.NewYearEve(2017) == datetime.date(2018, 2, 15)

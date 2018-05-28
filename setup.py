@@ -17,7 +17,7 @@ setup(
     long_description=read("README.rst"),
     author='wolfhong',
     author_email='hongxucai1991@gmail.com',
-    url='https://github.com/wolfhong/LunarCaendar',
+    url='https://github.com/wolfhong/LunarCalendar',
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",

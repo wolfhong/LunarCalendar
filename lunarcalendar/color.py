@@ -1,4 +1,4 @@
-# coding: utf-8
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
 
@@ -7,6 +7,7 @@ def make_color(code):
         tpl = '\x1b[{}m{}\x1b[0m'
         return tpl.format(code, s)
     return color_func
+
 
 red = make_color(31)
 green = make_color(32)

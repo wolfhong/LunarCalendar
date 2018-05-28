@@ -9,7 +9,7 @@ LunarCalendar: A Lunar-Solar Converter
 Overview
 --------
 
-If you aren't familiar with English, can read `Chinese(中文) <https://github.com/wolfhong/LunarCalendar/blob/develop/README_zh.rst>`_ here.
+`Chinese version(中文版) <https://github.com/wolfhong/LunarCalendar/blob/develop/README_zh.rst>`_ is provided.
 
 LunarCalendar is a Lunar-Solar Converter, containing a number of lunar and solar holidays in China.
 
@@ -56,6 +56,12 @@ Default to this year. Supporting alias of the festival.
 
     $ lunar-find 登高节 2019
     重阳节 on 2019: 2019-10-07
+
+You can also print all included festivals by date asc with:
+
+.. code-block:: console
+
+    $ lunar-find all 2019
 
 
 Quickstart

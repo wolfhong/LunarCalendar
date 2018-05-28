@@ -42,10 +42,10 @@ Console Commands
 
 .. code-block:: console
 
-    $ lunar_find 重阳
+    $ lunar-find 重阳
     重阳节 on 2018: 2018-10-17
 
-    $ lunar_find 登高节 2019
+    $ lunar-find 登高节 2019
     重阳节 on 2019: 2019-10-07
 
 

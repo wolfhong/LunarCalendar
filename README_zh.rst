@@ -1,24 +1,26 @@
 LunarCalendar: 一个农历-阳历转换器
-==================================
+================================================
 
 .. image::
   https://img.shields.io/pypi/v/LunarCalendar.svg
   :target: https://pypi.python.org/pypi/LunarCalendar
   :alt: Last stable version (PyPI)
 
-LunarCalendar 是一个农历-阳历的转换器, 包含了一些在中国常见的农历和国历的节假日。
+LunarCalendar 是一个农历-阳历的转换器, 收录了一些在中国常见的农历(阴历)和国历(阳历)节假日。
 由于韩国、日本的农历与中国是相同的，只是节假日有所不同，所以支持对韩国、日本节假日和语言的扩展。
 
-转换器支持时间段从1900-2100, 如果需要更长的时间段，利用generate.htm生成的数据即可。转换器的实现，参考自 `Lunar-Solar-Calendar-Converter <https://github.com/isee15/Lunar-Solar-Calendar-Converter>`_.
+转换器支持时间段从1900-2100, 如果需要更长的时间段，利用generate.htm生成的数据即可。
+转换器的实现，参考自 `Lunar-Solar-Calendar-Converter <https://github.com/isee15/Lunar-Solar-Calendar-Converter>`_.
 
 
-特点
+Features
 --------
 
-* 支持的时间范围非常容易扩展
-* 包含了农历节假日, 如: 中秋节
-* 包含了每年不固定的节假日, 如: 母亲节(每年5月第2个星期日)
-* 农历+国历的合法性检查
+* 原始数据精准, 通过了微软ChineseLunisolarCalendar类的比对
+* 节假日扩展与语言支持非常便捷
+* 收录了农历节假日, 如: 中秋/端午/除夕/重阳
+* 收录了每年不固定日期的节假日, 如: 母亲节(每年5月第2个星期日)
+* 加入了农历+国历的合法性检查
 
 
 Install
@@ -31,6 +33,20 @@ LunarCalendar can be installed from the PyPI with easy_install::
 Or pip::
 
    $ pip install LunarCalendar
+
+
+Console Commands
+----------------
+
+命令行可查找每年特定节日的日期，默认查找今年。节日支持别名查询:
+
+.. code-block:: console
+
+    $ lunar_find 重阳
+    重阳节 on 2018: 2018-10-17
+
+    $ lunar_find 登高节 2019
+    重阳节 on 2019: 2019-10-07
 
 
 Quickstart
@@ -64,16 +80,17 @@ Quickstart
     print(lunar.to_date(), type(lunar.to_date()))
     print(Lunar.from_date(datetime.date(2018, 4, 15)))
 
-日期合法性检查, 农历和国历都起作用, 如: 农历闰月2018-2-15是不存在的:
+日期合法性检查, 农历和国历都起作用, 如: 农历闰月2018-2-15是不存在的，但农历闰月2012-4-4是存在的:
 
 .. code-block:: python
 
+    Lunar(2012, 4, 4, isleap=True)  # date(2012, 5, 24)
     try:
         lunar = Lunar(2018, 2, 15, isleap=True)
     except DateNotExist:
         print(traceback.format_exc())
 
-打印内置节假日, 目前支持中文、英文输出:
+打印收录的节假日, 支持中文、英文输出，其他语言需要扩展(欢迎fork & pull-request):
 
 .. code-block:: python
 
@@ -111,26 +128,22 @@ Quickstart
     ......
 
 
-贡献
------
+Contribution
+-------------
 
-目前，LunarCalendar支持的节假日只包含了在中国常见的节日，包括国历节假日(如: 国庆节、母亲节)和农历节假日(如: 中秋节、重阳节)。
-内置了中文和英文两种语言，如果要支持韩文、日文的节假日，只需要在`festival.py`中添加对应的语言和节假日。
+收录节日的标准:
 
-查看所有节假日的方法:
+* 在对应国家中常见的节假日，如: 圣诞节、万圣节等。
+* 农历节假日
+* 国历节假日，但每年时间不固定，如: 母亲节、复活节等。
 
-.. code-block:: shell
+目前只支持中文和英文，如果要支持韩文、日文的节假日，需要在`lunarcalendar/festival.py`中添加对应的语言和节假日。
 
-    from lunarcalendar.festival import festivals
-
-    print("contain {} festivals".format(len(festivals)))
-    print("----- print all festivals on 2018 in chinese: -----")
-    for fest in festivals:
-        print(fest.get_lang('zh'), fest(2018))
+一些罕见的节假日可能未被收录, `欢迎补充 <https://github.com/wolfhong/LunarCalendar/issues>`_ .
 
 
-关于
-----
+About
+------
 
 * `Homepage <http://github.com/wolfhong/LunarCalendar>`_
 * `PyPI <https://pypi.python.org/pypi/LunarCalendar>`_

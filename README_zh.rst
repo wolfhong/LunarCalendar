@@ -9,14 +9,14 @@ LunarCalendar: 一个农历-阳历转换器
 LunarCalendar 是一个农历-阳历的转换器, 收录了一些在中国常见的农历(阴历)和国历(阳历)节假日。
 由于韩国、日本的农历与中国是相同的，只是节假日有所不同，所以支持对韩国、日本节假日和语言的扩展。
 
-转换器支持时间段从1900-2100, 如果需要更长的时间段，利用generate.htm生成的数据即可。
+转换器支持时间段从1900-2100, 如果需要更长的时间段，利用 ``generate.html`` 生成的数据即可。
 转换器的实现，参考自 `Lunar-Solar-Calendar-Converter <https://github.com/isee15/Lunar-Solar-Calendar-Converter>`_.
 
 
 Features
 --------
 
-* 原始数据精准, 通过了微软ChineseLunisolarCalendar类的比对
+* 原始数据精准, 通过了微软 ``ChineseLunisolarCalendar`` 类的比对
 * 节假日扩展与语言支持非常便捷
 * 收录了农历节假日, 如: 中秋/端午/除夕/重阳
 * 收录了每年不固定日期的节假日, 如: 母亲节(每年5月第2个星期日)
@@ -137,7 +137,7 @@ Contribution
 * 农历节假日
 * 国历节假日，但每年时间不固定，如: 母亲节、复活节等。
 
-目前只支持中文和英文，如果要支持韩文、日文的节假日，需要在`lunarcalendar/festival.py`中添加对应的语言和节假日。
+目前只支持中文和英文，如果要支持韩文、日文的节假日，需要在 ``lunarcalendar/festival.py`` 中添加对应的语言和节假日。
 
 一些罕见的节假日可能未被收录, `欢迎补充 <https://github.com/wolfhong/LunarCalendar/issues>`_ .
 

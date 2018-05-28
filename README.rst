@@ -1,24 +1,31 @@
-LunarCalendar: 一个农历-阳历转换器
-==================================
+LunarCalendar: A Lunar-Solar Converter
+=======================================
 
 .. image::
   https://img.shields.io/pypi/v/LunarCalendar.svg
   :target: https://pypi.python.org/pypi/LunarCalendar
   :alt: Last stable version (PyPI)
 
-LunarCalendar 是一个农历-阳历的转换器, 包含了一些在中国常见的农历和国历的节假日。
-由于韩国、日本的农历与中国是相同的，只是节假日有所不同，所以支持对韩国、日本节假日和语言的扩展。
+If you aren't familiar with English, can read `Chinese(中文) <https://github.com/wolfhong/LunarCalendar/blob/develop/README_zh.rst>`_ here.
 
-转换器支持时间段从1900-2100, 如果需要更长的时间段，利用generate.htm生成的数据即可。转换器的实现，参考自 `Lunar-Solar-Calendar-Converter <https://github.com/isee15/Lunar-Solar-Calendar-Converter>`_.
+LunarCalendar is a Lunar-Solar Converter, containing a number of lunar and solar holidays in China.
+
+Korean and Japanese lunar calendar is the same as Chinese calendar, but has different holidays.
+If `LunarCalendar` is extended, Korean and Japanese holidays are easily included, with their languages.
+
+LunarCalendar supports the time range 1900-2100. But if you have a need for the time range, you can use ``generate.html`` to extend it.
+
+LunarCalendar is inspired by `Lunar-Solar-Calendar-Converter <https://github.com/isee15/Lunar-Solar-Calendar-Converter>`_.
 
 
-特点
+Features
 --------
 
-* 支持的时间范围非常容易扩展
-* 包含了农历节假日, 如: 中秋节
-* 包含了每年不固定的节假日, 如: 母亲节(每年5月第2个星期日)
-* 农历+国历的合法性检查
+* Accurate raw data, synchronize with Microsolf's ``ChineseLunisolarCalendar`` class
+* Easy to extend holidays and languages
+* included Lunar Festivals, such as: MidAutumn Festival, Chinese New Year Eve, DragonBoat Festivals.
+* included Solar Festivals without fixed dates, such as: Mother's Day, Easter.
+* Added legality check of the lunar and solar date.
 
 
 Install
@@ -33,10 +40,25 @@ Or pip::
    $ pip install LunarCalendar
 
 
+Console Commands
+----------------
+
+A console command called `lunar_find` can be used to find the date of the festival, using it's chinese name.
+Default to this year. Supporting alias of the festival.
+
+.. code-block:: console
+
+    $ lunar_find 重阳
+    重阳节 on 2018: 2018-10-17
+
+    $ lunar_find 登高节 2019
+    重阳节 on 2019: 2019-10-07
+
+
 Quickstart
 ----------
 
-国历转农历:
+Solar to Lunar:
 
 .. code-block:: python
 
@@ -51,7 +73,7 @@ Quickstart
     print(solar)
     print(solar.to_date(), type(solar.to_date()))
 
-农历转国历:
+Lunar to Solar:
 
 .. code-block:: python
 
@@ -64,16 +86,17 @@ Quickstart
     print(lunar.to_date(), type(lunar.to_date()))
     print(Lunar.from_date(datetime.date(2018, 4, 15)))
 
-日期合法性检查, 农历和国历都起作用, 如: 农历闰月2018-2-15是不存在的:
+Legality check for solar and lunar date. 2018-2-15(Leap Month) does not exist, but 2012-4-4(Leap Month) exists:
 
 .. code-block:: python
 
+    Lunar(2012, 4, 4, isleap=True)  # date(2012, 5, 24)
     try:
         lunar = Lunar(2018, 2, 15, isleap=True)
     except DateNotExist:
         print(traceback.format_exc())
 
-打印内置节假日, 目前支持中文、英文输出:
+Print all the festivals included, with Chinese and English. Other languages are welcome to extend(Fork & Pull Request).
 
 .. code-block:: python
 
@@ -88,7 +111,7 @@ Quickstart
     for fest in festivals:
         print(fest.get_lang('en'), fest(2017))
 
-输出:
+Output:
 
 .. code-block:: shell
 
@@ -111,26 +134,23 @@ Quickstart
     ......
 
 
-贡献
------
+Contribution
+-------------
 
-目前，LunarCalendar支持的节假日只包含了在中国常见的节日，包括国历节假日(如: 国庆节、母亲节)和农历节假日(如: 中秋节、重阳节)。
-内置了中文和英文两种语言，如果要支持韩文、日文的节假日，只需要在`festival.py`中添加对应的语言和节假日。
+Including festival standards:
 
-查看所有节假日的方法:
+* Common holidays in the the country, such as: Christmas, Halloween, etc.
+* Lunar holidays.
+* Solar holidays without fixed dates, such as: Mother's Day, Easter, etc.
 
-.. code-block:: shell
+Supporting Chinese and English only now. If you want to add Korean or Japanese supports, modify ``lunarcalendar/festival.py`` to add holidays and languages.
 
-    from lunarcalendar.festival import festivals
-
-    print("contain {} festivals".format(len(festivals)))
-    print("----- print all festivals on 2018 in chinese: -----")
-    for fest in festivals:
-        print(fest.get_lang('zh'), fest(2018))
+Some unusual holidays may not be included, `welcom to extend <https://github.com/wolfhong/LunarCalendar/issues>`_ .
 
 
-关于
-----
+
+About
+------
 
 * `Homepage <http://github.com/wolfhong/LunarCalendar>`_
 * `PyPI <https://pypi.python.org/pypi/LunarCalendar>`_

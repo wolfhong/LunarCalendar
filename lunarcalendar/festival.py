@@ -148,7 +148,7 @@ ChineseNewYear = Festival(
 PoWu = Festival(
         lambda year: Lunar(year, 1, 5).to_date(),
         en="PoWu Festival",
-        zh="破五节,隔开日,接财神",
+        zh="破五节,隔开日,接财神,迎财神",
         )
 
 Lantern = Festival(

@@ -68,8 +68,22 @@ If Name is all, print all included festivals by date asc and then exit.
     return parser
 
 
-def format_output(fest, year):
-    output = "{} on {}: {}".format(blue(fest.get_lang('zh')), year, red(fest(year)))
+def format_output(fest, year, search_name=None):
+    first_name = fest.get_lang('zh')
+
+    if search_name and search_name != first_name:
+        output = "{}({}) on {}: {}".format(
+            blue(first_name),
+            search_name,
+            year,
+            red(fest(year)),
+        )
+    else:
+        output = "{} on {}: {}".format(
+            blue(first_name),
+            year,
+            red(fest(year)),
+        )
     sys.stdout.write(output + os.linesep)
 
 
@@ -97,14 +111,15 @@ def main(*args):
         for fest in zh_festivals:
             for zhname in fest.get_lang_list('zh'):
                 if zhname == name:
-                    format_output(fest, year)
+                    format_output(fest, year, search_name=name)
                     return 0  # 100% matched, print and exit
                 elif zhname.find(name) >= 0 and (len(name) * 1.0 / len(zhname) > 0.5):
-                    result_list.append(fest)  # not 100% matched, store result
+                    result_list.append((fest, name))  # not 100% matched, store result
+                    break
 
         # not found, but matched
-        for i, fest in enumerate(result_list):
-            format_output(fest, year)
+        for fest, search_name in result_list:
+            format_output(fest, year, search_name=search_name)
 
     return 0
 

@@ -92,7 +92,7 @@ NationDay = Festival(
 Halloween = Festival(
         lambda year: datetime.date(year, 10, 31),
         en="Halloween",
-        zh="万圣节前夜",
+        zh="万圣夜,万圣节前夜,万鬼节",
         )
 
 Thanksgiving = Festival(

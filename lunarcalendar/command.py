@@ -68,22 +68,17 @@ If Name is all, print all included festivals by date asc and then exit.
     return parser
 
 
-def format_output(fest, year, search_name=None):
+def format_output(fest, year, search_name=None, name_width=None):
     first_name = fest.get_lang('zh')
+    if name_width:
+        first_name = "  " * (name_width-len(first_name)) + first_name
 
     if search_name and search_name != first_name:
-        output = "{}({}) on {}: {}".format(
-            blue(first_name),
-            search_name,
-            year,
-            red(fest(year)),
-        )
+        format_name = "{}({})".format(blue(first_name), search_name)
     else:
-        output = "{} on {}: {}".format(
-            blue(first_name),
-            year,
-            red(fest(year)),
-        )
+        format_name = blue(first_name)
+
+    output = "{} on {}: {}".format(format_name, year, red(fest(year)), )
     sys.stdout.write(output + os.linesep)
 
 
@@ -105,7 +100,8 @@ def main(*args):
         parser.print_help()
         return 1
     elif name == 'all':
-        [format_output(f, year) for f in sorted(zh_festivals, key=lambda _f: _f(year))]
+        max_width = max([len(f.get_lang('zh')) for f in zh_festivals])
+        [format_output(f, year, name_width=max_width) for f in sorted(zh_festivals, key=lambda _f: _f(year))]
     else:
         result_list = []
         for fest in zh_festivals:

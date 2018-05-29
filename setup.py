@@ -29,12 +29,15 @@ setup(
         "Topic :: Utilities",
     ],
     keywords=[
-        'Lunar Calendar', 'festival', 'Chinese festivals',
+        'lunar calendar', 'festival', 'Chinese festivals', '24 solar terms',
+        'solar calendar',  'lunar solar converter', 'lunisolar calendar',
     ],
     license='MIT',
     packages=["lunarcalendar", ],
     install_requires=[
-        'python-dateutil>=2.7.2',
+        'python-dateutil>=2.6.1',
+        'ephem',  # basic astronomical computations for Python
+        'pytz',  # timezone support
     ],
     python_requires='>=2.7, <4',
     entry_points={

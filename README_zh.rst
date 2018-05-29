@@ -1,4 +1,4 @@
-LunarCalendar: 一个农历-阳历转换器
+LunarCalendar: 一个农历-公历转换器
 ==================================
 
 .. image::
@@ -10,8 +10,8 @@ LunarCalendar: 一个农历-阳历转换器
 Overview
 --------
 
-LunarCalendar 是一个农历-阳历的转换器, 收录了一些在中国常见的农历(阴历)和国历(阳历)节假日。
-由于韩国、日本的农历与中国是相同的，只是节假日有所不同，所以支持对韩国、日本节假日和语言的扩展。
+LunarCalendar 是一个农历-公历的转换器, 收录了一些在中国常见的农历(阴阳历的一种)和公历(Gregorian Calendar, 又称阳历、西历、新历)节假日。
+由于韩国、日本、越南的农历与中国是相同的，只是节假日有所不同，所以支持对韩国、日本节假日和语言的扩展。
 
 转换器支持时间段从1900-2100, 如果需要更长的时间段，利用 ``generate.html`` 生成的数据即可。
 转换器的实现，参考自 `Lunar-Solar-Calendar-Converter <https://github.com/isee15/Lunar-Solar-Calendar-Converter>`_.
@@ -24,7 +24,7 @@ Features
 * 节假日扩展与语言支持非常便捷
 * 收录了农历节假日, 如: 中秋/端午/除夕/重阳
 * 收录了每年不固定日期的节假日, 如: 母亲节(每年5月第2个星期日)
-* 加入了农历+国历的合法性检查
+* 加入了农历+公历的合法性检查
 
 
 Install
@@ -62,7 +62,7 @@ Console Commands
 Quickstart
 ----------
 
-国历转农历:
+公历转农历:
 
 .. code-block:: python
 
@@ -77,7 +77,7 @@ Quickstart
     print(solar)
     print(solar.to_date(), type(solar.to_date()))
 
-农历转国历:
+农历转公历:
 
 .. code-block:: python
 
@@ -90,7 +90,7 @@ Quickstart
     print(lunar.to_date(), type(lunar.to_date()))
     print(Lunar.from_date(datetime.date(2018, 4, 15)))
 
-日期合法性检查, 农历和国历都起作用, 如: 农历闰月2018-2-15是不存在的，但农历闰月2012-4-4是存在的:
+日期合法性检查, 农历和公历都起作用, 如: 农历闰月2018-2-15是不存在的，但农历闰月2012-4-4是存在的:
 
 .. code-block:: python
 
@@ -145,7 +145,7 @@ Contribution
 
 * 在对应国家中常见的节假日，如: 圣诞节、万圣节等。
 * 农历节假日
-* 国历节假日，但每年时间不固定，如: 母亲节、复活节等。
+* 公历节假日，但每年时间不固定，如: 母亲节、复活节等。
 
 目前只支持中文和英文，如果要支持韩文、日文的节假日，需要在 ``lunarcalendar/festival.py`` 中添加对应的语言和节假日。
 

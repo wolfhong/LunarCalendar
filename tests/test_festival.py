@@ -4,12 +4,14 @@ import datetime
 from lunarcalendar import festival
 
 
-def test_festival():
+def test_festivals():
     assert festival.NewYear(2018) == datetime.date(2018, 1, 1)
     assert festival.Valentine(2018) == datetime.date(2018, 2, 14)
     assert festival.WomenDay(2018) == datetime.date(2018, 3, 8)
     assert festival.ArborDay(2018) == datetime.date(2018, 3, 12)
     assert festival.ChingMing(2018) == datetime.date(2018, 4, 5)
+    assert festival.ChingMing(2012) == datetime.date(2012, 4, 4)
+    assert festival.ChingMing(2088) == datetime.date(2088, 4, 4)
 
     assert festival.LabourDay(2018) == datetime.date(2018, 5, 1)
     assert festival.YouthDay(2018) == datetime.date(2018, 5, 4)
@@ -40,3 +42,4 @@ def test_festival():
     assert festival.ChongYang(2018) == datetime.date(2018, 10, 17)
 
     assert festival.Hanyi(2018) == datetime.date(2018, 11, 8)
+    assert festival.DongJie(2018) == datetime.date(2018, 12, 22)

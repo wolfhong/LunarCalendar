@@ -13,8 +13,8 @@ Overview
 
 LunarCalendar is a Lunar-Solar Converter, containing a number of lunar and solar holidays in China.
 
-Korean and Japanese lunar calendar is the same as Chinese calendar, but has different holidays.
-If `LunarCalendar` is extended, Korean and Japanese holidays are easily included, with their languages.
+Korean, Japanese and Vietnamese lunar calendar is the same as Chinese calendar, but has different holidays.
+If `LunarCalendar` is extended; Korean, Japanese and Vietnamese holidays are easily included, with their languages.
 
 LunarCalendar supports the time range 1900-2100. But if you have a need for the time range, you can use ``generate.html`` to extend it.
 
@@ -26,8 +26,8 @@ Features
 
 * Accurate raw data, synchronize with Microsolf's ``ChineseLunisolarCalendar`` class
 * Easy to extend holidays and languages
-* included Lunar Festivals, such as: MidAutumn Festival, Chinese New Year Eve, DragonBoat Festivals
-* included Solar Festivals without fixed dates, such as: Mother's Day, Easter
+* Included Lunar Festivals, such as: MidAutumn Festival, Chinese New Year Eve, DragonBoat Festivals
+* Included Solar Festivals without fixed dates, such as: Mother's Day, Easter
 * Added legality check of the lunar and solar date
 
 
@@ -152,7 +152,7 @@ Including festival standards:
 * Lunar holidays.
 * Solar holidays without fixed dates, such as: Mother's Day, Easter, etc.
 
-Supporting Chinese and English only now. If you want to add Korean or Japanese supports, modify ``lunarcalendar/festival.py`` to add holidays and languages.
+Supporting Chinese and English only now. If you want to add Korean, Japanese or Vietnamese supports, modify ``lunarcalendar/festival.py`` to add holidays and languages.
 
 Some unusual holidays may not be included, `welcom to extend <https://github.com/wolfhong/LunarCalendar/issues>`_.
 

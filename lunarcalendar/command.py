@@ -68,7 +68,7 @@ def create_parser():
 
 
 def format_output(fest, year, search_name=None, name_width=None):
-    first_name = fest.get_lang('zh')
+    first_name = fest.get_lang('zh_hans')
     if name_width:
         first_name = "  " * (name_width-len(first_name)) + first_name
 
@@ -82,7 +82,7 @@ def format_output(fest, year, search_name=None, name_width=None):
 
 
 def print_list(year, a_list):
-    max_width = max([len(f.get_lang('zh')) for f in a_list])
+    max_width = max([len(f.get_lang('zh_hans')) for f in a_list])
     [format_output(f, year, name_width=max_width) for f in sorted(a_list, key=lambda _f: _f(year))]
 
 
@@ -112,7 +112,7 @@ def main(*args):
     else:
         result_list = []
         for fest in zh_solarterms + zh_festivals:
-            for zhname in fest.get_lang_list('zh'):
+            for zhname in fest.get_lang_list('zh_hans'):
                 if zhname == name:
                     format_output(fest, year, search_name=name)
                     return 0  # 100% matched, print and exit
@@ -121,13 +121,14 @@ def main(*args):
                     break
 
         if not result_list:  # if nothing, find again using zh_hant
-            for zhname in fest.get_lang_list('zh_hant'):
-                if zhname == name:
-                    format_output(fest, year, search_name=name)
-                    return 0  # 100% matched, print and exit
-                elif zhname.find(name) >= 0 and (len(name) * 1.0 / len(zhname) > 0.5):
-                    result_list.append((fest, name))  # not 100% matched, store result
-                    break
+            for fest in zh_solarterms + zh_festivals:
+                for zhname in fest.get_lang_list('zh_hant'):
+                    if zhname == name:
+                        format_output(fest, year, search_name=name)
+                        return 0  # 100% matched, print and exit
+                    elif zhname.find(name) >= 0 and (len(name) * 1.0 / len(zhname) > 0.5):
+                        result_list.append((fest, name))  # not 100% matched, store result
+                        break
 
         # not found, but matched
         for fest, search_name in result_list:

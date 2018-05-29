@@ -25,10 +25,11 @@ Features
 --------
 
 * Accurate raw data, synchronize with Microsolf's ``ChineseLunisolarCalendar`` class
-* Easy to extend holidays and languages
+* Easy to extend holidays and languages, supported both `zh_hans` and `zh_hant`
 * Included Lunar Festivals, such as: MidAutumn Festival, Chinese New Year Eve, DragonBoat Festivals
 * Included Solar Festivals without fixed dates, such as: Mother's Day, Easter
 * Added legality check of the lunar and solar date
+* Supported 24 solar terms
 
 
 Install
@@ -54,14 +55,19 @@ Default to this year. Supporting alias of the festival.
     $ lunar-find 重阳
     重阳节 on 2018: 2018-10-17
 
+    $ lunar-find 重陽節
+    重阳节 on 2018: 2018-10-17
+
     $ lunar-find 登高节 2019
     重阳节 on 2019: 2019-10-07
 
-You can also print all included festivals by date asc with:
+You can also print all included festivals or 24 solar terms by date asc with:
 
 .. code-block:: console
 
     $ lunar-find all 2019
+    $ lunar-find festival 2012
+    $ lunar-find solarterm
 
 
 Quickstart

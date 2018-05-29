@@ -21,10 +21,11 @@ Features
 --------
 
 * 原始数据精准, 通过了微软 ``ChineseLunisolarCalendar`` 类的比对
-* 节假日扩展与语言支持非常便捷
+* 节假日扩展与语言支持非常便捷, 支持简体和繁体
 * 收录了农历节假日, 如: 中秋/端午/除夕/重阳
 * 收录了每年不固定日期的节假日, 如: 母亲节(每年5月第2个星期日)
 * 加入了农历+公历的合法性检查
+* 支持二十四节气
 
 
 Install
@@ -49,14 +50,19 @@ Console Commands
     $ lunar-find 重阳
     重阳节 on 2018: 2018-10-17
 
+    $ lunar-find 重陽節
+    重阳节 on 2018: 2018-10-17
+
     $ lunar-find 登高节 2019
     重阳节 on 2019: 2019-10-07
 
-按照时间升序打印对应年份的所有内置日期:
+按照时间升序打印对应年份的所有内置日期, 所有节日, 所有节气:
 
 .. code-block:: console
 
     $ lunar-find all 2019
+    $ lunar-find festival 2012
+    $ lunar-find solarterm
 
 
 Quickstart

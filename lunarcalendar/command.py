@@ -43,7 +43,11 @@ def create_parser():
         action="store",
         default="",
         nargs="?",
-        help="Name of the festival. If Name is all, print all included festivals by date asc and then exit.")
+        help="""Name of the festival.
+If Name == "all", print all included date(festivals and 24 solar terms) by date asc.
+If Name == "festival", print all included festivals.
+If Name == "solarterm", print 24 solar terms.
+""")
     fest.add_argument(
         dest="year",
         action="store",

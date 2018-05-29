@@ -29,9 +29,11 @@ def test_festivals():
     assert festival.ChristmasDay(2018) == datetime.date(2018, 12, 25)
     assert festival.Easter(2019) == datetime.date(2019, 4, 21)
 
-    assert festival.LaBa(2017) == datetime.date(2018, 1, 24)
-    assert festival.NewYearEve(2017) == datetime.date(2018, 2, 15)
+    assert festival.LaBa(2018) == datetime.date(2018, 1, 24)
+    assert festival.XiaoNian(2018) == datetime.date(2018, 2, 8)
+    assert festival.NewYearEve(2018) == datetime.date(2018, 2, 15)
     assert festival.ChineseNewYear(2018) == datetime.date(2018, 2, 16)
+    assert festival.PoWu(2018) == datetime.date(2018, 2, 20)
     assert festival.Lantern(2018) == datetime.date(2018, 3, 2)
     assert festival.DragonHead(2018) == datetime.date(2018, 3, 18)
 

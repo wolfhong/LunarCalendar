@@ -93,7 +93,7 @@ NationDay = Festival(
 Halloween = Festival(
         lambda year: datetime.date(year, 10, 31),
         en="Halloween",
-        zh_hans="万圣节前夜",
+        zh_hans="万圣夜,万圣节前夜,万鬼节",
         )
 
 Thanksgiving = Festival(
@@ -124,21 +124,33 @@ Easter = Festival(
 
 
 LaBa = Festival(
-        lambda year: Lunar(year, 12, 8).to_date(),
+        lambda year: Lunar(year-1, 12, 8).to_date(),
         en="LaBa Festival",
         zh_hans="腊八节",
         )
 
 NewYearEve = Festival(
-        lambda year: Lunar(year+1, 1, 1).to_date() - datetime.timedelta(days=1),
+        lambda year: Lunar(year, 1, 1).to_date() - datetime.timedelta(days=1),
         en="New Year's Eve",
         zh_hans="除夕,除夕夜,大年夜,年夜,年三十,除夜,岁除,大晦日",
+        )
+
+XiaoNian = Festival(
+        lambda year: Lunar(year-1, 12, 23).to_date(),
+        en="XiaoNian",
+        zh="小年,谢节,送灶,祭灶节,灶王节,送神",
         )
 
 ChineseNewYear = Festival(
         lambda year: Lunar(year, 1, 1).to_date(),
         en="Chinese New Year",
         zh_hans="春节,中国新年,年结,岁首,新春,正旦,正月朔日,过新年,过年")
+
+PoWu = Festival(
+        lambda year: Lunar(year, 1, 5).to_date(),
+        en="PoWu Festival",
+        zh="破五节,隔开日,接财神,迎财神",
+        )
 
 Lantern = Festival(
         lambda year: Lunar(year, 1, 15).to_date(),

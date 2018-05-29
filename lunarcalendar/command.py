@@ -5,10 +5,11 @@ import os
 import sys
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 
+from lunarcalendar import __version__
 from lunarcalendar.color import red, blue
 from lunarcalendar._compact import unicode_type
-from lunarcalendar import __version__
 from lunarcalendar.festival import zh_festivals
+from lunarcalendar.solarterm import zh_solarterms
 
 
 DESCRIPTION = """Search festivals by chinese-name. """
@@ -42,9 +43,7 @@ def create_parser():
         action="store",
         default="",
         nargs="?",
-        help="""Name of the festival.
-If Name is all, print all included festivals by date asc and then exit.
-""")
+        help="Name of the festival. If Name is all, print all included festivals by date asc and then exit.")
     fest.add_argument(
         dest="year",
         action="store",
@@ -82,6 +81,11 @@ def format_output(fest, year, search_name=None, name_width=None):
     sys.stdout.write(output + os.linesep)
 
 
+def print_list(year, a_list):
+    max_width = max([len(f.get_lang('zh')) for f in a_list])
+    [format_output(f, year, name_width=max_width) for f in sorted(a_list, key=lambda _f: _f(year))]
+
+
 def main(*args):
     parser = create_parser()
     args = parser.parse_args(args if args else None)
@@ -100,12 +104,24 @@ def main(*args):
         parser.print_help()
         return 1
     elif name == 'all':
-        max_width = max([len(f.get_lang('zh')) for f in zh_festivals])
-        [format_output(f, year, name_width=max_width) for f in sorted(zh_festivals, key=lambda _f: _f(year))]
+        print_list(year, zh_festivals + zh_solarterms)
+    elif name.find('festival') >= 0:
+        print_list(year, zh_festivals)
+    elif name.find('solarterm') >= 0:
+        print_list(year, zh_solarterms)
     else:
         result_list = []
-        for fest in zh_festivals:
+        for fest in zh_solarterms + zh_festivals:
             for zhname in fest.get_lang_list('zh'):
+                if zhname == name:
+                    format_output(fest, year, search_name=name)
+                    return 0  # 100% matched, print and exit
+                elif zhname.find(name) >= 0 and (len(name) * 1.0 / len(zhname) > 0.5):
+                    result_list.append((fest, name))  # not 100% matched, store result
+                    break
+
+        if not result_list:  # if nothing, find again using zh_hant
+            for zhname in fest.get_lang_list('zh_hant'):
                 if zhname == name:
                     format_output(fest, year, search_name=name)
                     return 0  # 100% matched, print and exit

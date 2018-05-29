@@ -36,7 +36,7 @@ setup(
     packages=["lunarcalendar", ],
     install_requires=[
         'python-dateutil>=2.6.1',
-        'ephem',  # basic astronomical computations for Python
+        'ephem>=3.7.5.3',  # basic astronomical computations for Python
         'pytz',  # timezone support
     ],
     python_requires='>=2.7, <4',

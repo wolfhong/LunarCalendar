@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
+# from __future__ import unicode_literals if import this, CTypes in ephem will error
 # rewrite from https://github.com/kiyota-yoji/EastAsiaCalendars
-from __future__ import unicode_literals
 import ephem
 from math import pi, floor, fabs, sin, cos
 import pytz

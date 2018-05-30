@@ -16,7 +16,7 @@ DESCRIPTION = """Search festivals by chinese-name. """
 
 EPILOG = """
 eg: lunar-find 中秋 [2018]
-eg: lunar-find -a [2018]
+eg: lunar-find all [2018]
 
 Recommended time range: 1900 - 2100, which may be enough.
 If not, you must extend it before expect it working well.
@@ -25,7 +25,7 @@ For documentation, source code and other information, please visit:
 <https://github.com/wolfhong/LunarCalendar>_.
 
 You're welcome to contribute to this project, or offer some suggestions
-about festival, come on and open an issue please:
+about festivals, come on and file an issue please:
 <https://github.com/wolfhong/LunarCalendar/issues>_.
 """
 

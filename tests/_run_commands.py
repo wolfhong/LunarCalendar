@@ -3,6 +3,10 @@ from __future__ import unicode_literals
 from subprocess import Popen, PIPE
 from lunarcalendar import zh_festivals, zh_solarterms
 
+'''
+`with Popen() can only run on Python 3.4+`, so excluded from pytest.
+'''
+
 
 def _assert_output_line_count(args, count):
     with Popen(['python', 'lunarcalendar/command.py'] + args, stdout=PIPE) as p:
@@ -31,3 +35,5 @@ def test_command():
 
     _assert_output_line_count(['solarterm'], len(zh_solarterms))
     _assert_output_line_count(['solarterms', '2017'], len(zh_solarterms))
+
+test_command()

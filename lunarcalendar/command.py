@@ -17,6 +17,8 @@ DESCRIPTION = """Search festivals by chinese-name. """
 EPILOG = """
 eg: lunar-find 中秋 [2018]
 eg: lunar-find all [2018]
+eg: lunar-find festival [2018]
+eg: lunar-find solarterm [2018]
 
 Recommended time range: 1900 - 2100, which may be enough.
 If not, you must extend it before expect it working well.

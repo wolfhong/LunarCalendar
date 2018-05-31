@@ -6,6 +6,12 @@ LunarCalendar: A Lunar-Solar Converter
   :target: https://pypi.python.org/pypi/LunarCalendar
   :alt: Last stable version (PyPI)
 
+.. image::
+  https://travis-ci.org/wolfhong/LunarCalendar.svg
+  :target: https://travis-ci.org/wolfhong/LunarCalendar
+  :alt: build status
+
+
 Overview
 --------
 

@@ -39,6 +39,16 @@ Or pip::
 
    $ pip install LunarCalendar
 
+如果在安装时遇到诸如此类的错误: `command 'gcc' failed with exit status 1 while installing ephem`, 可能你需要先安装 `python-devel` 库.
+For CentOS::
+
+   $ yum install python-devel
+
+For Ubuntu::
+
+   $ apt-get install python-dev
+
+
 
 Console Commands
 ----------------

@@ -7,4 +7,4 @@ __all__ = [
     'zh_festivals', 'zh_solarterms',
 ]
 
-__version__ = '0.0.8'
+__version__ = '0.0.9'

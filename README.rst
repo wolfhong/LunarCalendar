@@ -32,7 +32,7 @@ Features
 --------
 
 * Accurate raw data, synchronize with Microsolf's ``ChineseLunisolarCalendar`` class
-* Easy to extend festivals and languages, supported both `zh_hans` and `zh_hant`
+* Easy to extend festivals and languages, supported both ``zh_hans`` and ``zh_hant``
 * Included Lunar Festivals, such as: MidAutumn Festival, Chinese New Year Eve, DragonBoat Festivals
 * Included Solar Festivals without fixed dates, such as: Mother's Day, Easter
 * Added legality check of the lunar and solar date
@@ -42,7 +42,7 @@ Features
 Install
 -------
 
-LunarCalendar can be installed from the PyPI with `easy_install`::
+LunarCalendar can be installed from the PyPI with ``easy_install``::
 
    $ easy_install LunarCalendar
 
@@ -50,7 +50,7 @@ Or pip::
 
    $ pip install LunarCalendar
 
-If you encounter an error like `command 'gcc' failed with exit status 1 while installing ephem`, maybe you should install `python-devel` first.
+If you encounter an error like ``command 'gcc' failed with exit status 1 while installing ephem``, maybe you should install ``python-devel`` first.
 For CentOS::
 
    $ yum install python-devel
@@ -63,7 +63,7 @@ For Ubuntu::
 Console Commands
 ----------------
 
-A console command called `lunar-find` can be used to find the date of the festival, using it's chinese name.
+A console command called ``lunar-find`` can be used to find the date of the festival, using it's chinese name.
 Default to this year. Supporting alias of the festival.
 
 .. code-block:: console

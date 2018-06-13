@@ -1,4 +1,4 @@
-v0.0.8
+v0.0.9
 ------
 
 * Supported `all`, `solarterm`, `festival` in `lunar-find` console command

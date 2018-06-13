@@ -31,7 +31,7 @@ Features
 Install
 -------
 
-LunarCalendar can be installed from the PyPI with `easy_install`::
+LunarCalendar can be installed from the PyPI with ``easy_install``::
 
    $ easy_install LunarCalendar
 
@@ -39,7 +39,7 @@ Or pip::
 
    $ pip install LunarCalendar
 
-如果在安装时遇到诸如此类的错误: `command 'gcc' failed with exit status 1 while installing ephem`, 可能你需要先安装 `python-devel` 库.
+如果在安装时遇到诸如此类的错误: ``command 'gcc' failed with exit status 1 while installing ephem``, 可能你需要先安装 ``python-devel`` 库.
 For CentOS::
 
    $ yum install python-devel

@@ -17,12 +17,13 @@ Overview
 
 `Chinese version(中文版) <https://github.com/wolfhong/LunarCalendar/blob/develop/README_zh.rst>`_ is provided.
 
-LunarCalendar is a Lunar-Solar Converter, containing a number of lunar and solar holidays in China.
+LunarCalendar is a Lunar-Solar Converter, containing a number of lunar and solar festivals in China.
 
-Korean, Japanese and Vietnamese lunar calendar is the same as Chinese calendar, but has different holidays.
-If `LunarCalendar` is extended; Korean, Japanese and Vietnamese holidays are easily included, with their languages.
+Korean, Japanese or Vietnamese lunar calendar is the same as Chinese calendar, but has different festivals.
+Korean, Japanese and Vietnamese festivals can be easily included, with their languages.
 
-LunarCalendar supports the time range 1900-2100. But if you have a need for the time range, you can use ``generate.html`` to extend it.
+LunarCalendar supports a time range of 1900 to 2100, which may be enough for a long time.
+But if you have needs for a wider time range, you can use ``generate.html`` to extend it.
 
 LunarCalendar is inspired by `Lunar-Solar-Calendar-Converter <https://github.com/isee15/Lunar-Solar-Calendar-Converter>`_.
 
@@ -31,11 +32,11 @@ Features
 --------
 
 * Accurate raw data, synchronize with Microsolf's ``ChineseLunisolarCalendar`` class
-* Easy to extend holidays and languages, supported both `zh_hans` and `zh_hant`
+* Easy to extend festivals and languages, supported both `zh_hans` and `zh_hant`
 * Included Lunar Festivals, such as: MidAutumn Festival, Chinese New Year Eve, DragonBoat Festivals
 * Included Solar Festivals without fixed dates, such as: Mother's Day, Easter
 * Added legality check of the lunar and solar date
-* Supported 24 solar terms
+* Supported 24 solar terms(立春/春分/清明/冬至等)
 
 
 Install
@@ -73,7 +74,9 @@ You can also print all included festivals or 24 solar terms by date asc with:
 
     $ lunar-find all 2019
     $ lunar-find festival 2012
+    $ lunar-find 节日 2012
     $ lunar-find solarterm
+    $ lunar-find 节气
 
 
 Quickstart
@@ -160,13 +163,13 @@ Contribution
 
 Including festival standards:
 
-* Common holidays in the the country, such as: Christmas, Halloween, etc.
-* Lunar holidays.
-* Solar holidays without fixed dates, such as: Mother's Day, Easter, etc.
+* Common festivals in the the country, such as: Christmas, Halloween, etc.
+* Lunar festivals.
+* Solar festivals without fixed dates, such as: Mother's Day, Easter, etc.
 
-Supporting Chinese and English only now. If you want to add Korean, Japanese or Vietnamese supports, modify ``lunarcalendar/festival.py`` to add holidays and languages.
+Supporting Chinese and English only now. If you want to add Korean, Japanese or Vietnamese supports, modify ``lunarcalendar/festival.py`` to add festivals and languages.
 
-Some unusual holidays may not be included, `welcom to extend <https://github.com/wolfhong/LunarCalendar/issues>`_.
+Some unusual festivals may not be included, `welcome to extend <https://github.com/wolfhong/LunarCalendar/issues>`_.
 
 
 

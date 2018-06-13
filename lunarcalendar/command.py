@@ -111,9 +111,9 @@ def main(*args):
         return 1
     elif name == 'all':
         print_list(year, zh_festivals + zh_solarterms)
-    elif name.find('festival') >= 0:
+    elif name.find('festival') >= 0 or name.find('节日') >= 0:
         print_list(year, zh_festivals)
-    elif name.find('solarterm') >= 0:
+    elif name.find('solarterm') >= 0 or name.find('节气') >= 0:
         print_list(year, zh_solarterms)
     else:
         result_list = []

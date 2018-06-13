@@ -62,7 +62,9 @@ Console Commands
 
     $ lunar-find all 2019
     $ lunar-find festival 2012
+    $ lunar-find 节日 2012
     $ lunar-find solarterm
+    $ lunar-find 节气
 
 
 Quickstart

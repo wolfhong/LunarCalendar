@@ -59,6 +59,8 @@ For Ubuntu::
 
    $ apt-get install python-dev
 
+For Windows, maybe you should install `Microsoft Build Tools <https://www.microsoft.com/en-us/download/details.aspx?id=48159>`_ first. It will help you building c++ code for ``ephem`` library, which LunarCalendar includes for 24-solar-terms calculation.
+
 
 Console Commands
 ----------------

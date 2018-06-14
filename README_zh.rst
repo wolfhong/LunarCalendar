@@ -48,6 +48,8 @@ For Ubuntu::
 
    $ apt-get install python-dev
 
+For Windows, 可能你需要先安装 `Microsoft Build Tools <https://www.microsoft.com/en-us/download/details.aspx?id=48159>`_ 
+它将帮助你编译C++代码。LunarCalendar为了能使用天文学的方式计算24节气引入了 ``ephem`` 库，该库编译时依赖于此。
 
 
 Console Commands
